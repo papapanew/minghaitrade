@@ -1,0 +1,139 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<title>{$eyou.field.seo_title}</title>
+<meta name="keywords" content="{$eyou.field.seo_keywords}" />
+<meta name="description" content="{$eyou.field.seo_description}" />
+<link href="{eyou:global name='web_ico' /}" rel="shortcut icon" type="image/x-icon" />
+{eyou:static file='skin/css/common.css' /}
+{eyou:static file='skin/css/nystyle.css' /}
+{eyou:static file='skin/css/swiper.min.css' /}
+{eyou:static file='skin/js/jquery-3.7.0.min.js' /}
+{eyou:static file='skin/js/swiper.min.js' /}
+</head>
+<body style="background-color:#f9f9f9;">
+{eyou:include file="header.htm" /}
+<div class="ey_banner"> <img src="{eyou:adv pid='2' loop='1'}{$field.litpic}{/eyou:adv}" class="ba_img"/>
+  <div class="ba_con">
+    <p>{$eyou.field.typeid|gettoptype=###,'typename'}</p>
+    <i></i><span>{$eyou.field.typeid|gettoptype=###,'englist_name'}</span></div>
+</div>
+<div class="ey_crumb"> <i></i>
+  <div class="ey_crumb_main">
+    <ul>
+      <li class="ey_active"><a href="{$eyou.field.typeurl}">{$eyou.field.typename}</a></li>
+      <div class="clear"></div>
+    </ul>
+    <p><img src="{eyou:global name='web_templets_pc' /}/skin/images/crumb.png" class="crumb"/>当前位置：{eyou:position/}</p>
+    <div class="clear"></div>
+  </div>
+</div>
+<div class="ey_order">
+  <div class="ey_order_main">
+    <div class="ey_order_left">
+      <div class="ey_order_img"><img src="{eyou:global name='web_templets_pc' /}/skin/images/kfimg.jpg"/></div>
+      <!-- <p>欢迎您来到我们的<br/>
+        在线留言板块！</p> -->
+        <p>{eyou:global name='web_attr_17' /}</p>
+      <span>{eyou:global name='web_attr_19' /}</span>
+      <div class="ey_order_btn">{eyou:type typeid="7"}<a href="{$field.typeurl}"><img src="{eyou:global name='web_templets_pc' /}/skin/images/ico06.png"/>{$field.typename}</a>{/eyou:type}</div>
+    </div>
+    <div class="ey_order_right">
+      <div class="web_msg" id="web_msg"> {eyou:guestbookform type='default'}
+        <form method="POST" action="{$field.action}" {$field.formhidden} onsubmit="{$field.submit}">
+          <h3>留言框 </h3>
+          <ul>
+            <li>
+              <h4 class="xh">{$field.itemname_1}：</h4>
+              <div class="msg_ipt1">
+                <input class="textborder" size="30" type='text' id='attr_1' name='{$field.attr_1}' placeholder="{$field.itemname_1}" />
+              </div>
+            </li>
+            <li>
+              <h4>{$field.itemname_3}：</h4>
+              <div class="msg_ipt12">
+                <input class="textborder" size="42" type='text' id='attr_3' name='{$field.attr_3}' placeholder="{$field.itemname_3}" />
+              </div>
+            </li>
+            <li>
+              <h4 class="xh">{$field.itemname_4}：</h4>
+              <div class="msg_ipt1">
+                <input class="textborder" size="16" type='text' id='attr_4' name='{$field.attr_4}' placeholder="{$field.itemname_4}"/>
+              </div>
+            </li>
+            <li>
+              <h4 class="xh">{$field.itemname_5}：</h4>
+              <div class="msg_ipt1">
+                <input class="textborder" size="30" type='text' id='attr_5' name='{$field.attr_5}' placeholder="{$field.itemname_5}"/>
+              </div>
+            </li>
+            <li>
+              <h4>{$field.itemname_6}：</h4>
+              <div class="msg_ipt12">
+                <input class="textborder" size="30" type='text' id='attr_6' name='{$field.attr_6}' placeholder="{$field.itemname_6}"/>
+              </div>
+            </li>
+            <li>
+              <h4>{$field.itemname_8}：</h4>
+
+
+
+
+              <div id="language_val" data-language="{eyou:lang name='language' /}"></div>
+
+              <div class="msg_ipt12" id="vity_list">
+                <select class="msg_option" {$field.first_id_8}>
+                            <option value=''>请选择您所在的省份</option>
+                            {eyou:volist name='$field.options_8' id='vo'}
+                    <option value="{$vo.id}">{$vo.name}</option>
+                            {/eyou:volist}
+                  {$field.hidden_8}
+                </select>
+              </div>
+
+            </li>
+            <li>
+              <h4>{$field.itemname_7}：</h4>
+              <div class="msg_ipt12">
+                <input class="textborder" size="50" type='text' id='attr_7' name='{$field.attr_7}' placeholder="请输入您的{$field.itemname_7}"/>
+              </div>
+            </li>
+            <li>
+              <h4>{$field.itemname_2}：</h4>
+              <div class="msg_ipt12 msg_ipt0">
+                <textarea class="areatext" style="width:100%;" id='attr_2' name='{$field.attr_2}' rows="8" cols="65" placeholder="请输入您的任何要求、意见或建议"></textarea>
+              </div>
+            </li>
+            <li>
+              <h4></h4>
+              <div class="msg_btn">
+                <input type="submit" value="提 交" name="submit"  class="msg_btn1"/>
+                <input type="reset" value="重 填" name="reset"/>
+              </div>
+            </li>
+          </ul>
+          {$field.hidden}
+        </form>
+        {/eyou:guestbookform} </div>
+    </div>
+    <div class="clear"></div>
+  </div>
+</div>
+{eyou:include file="footer.htm" /}
+</body>
+</html>
+
+<script type="text/javascript">
+  $(function () {
+
+    var languageVal = $('#language_val').attr('data-language')
+console.log(languageVal)
+
+      if(languageVal === 'English'){
+        document.getElementById("vity_list").style.display = "none";
+      }
+      
+  });
+</script>

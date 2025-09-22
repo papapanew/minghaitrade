@@ -1,0 +1,149 @@
+
+    /*官方内置样式表，升级会覆盖变动，请勿修改，否则后果自负*/
+
+    /*左侧收缩图标*/
+    #foldSidebar i { font-size: 24px;color:#963885; }
+    /*左侧菜单*/
+    .eycms_cont_left{ background:#963885; }
+    .eycms_cont_left dl dd a:hover,.eycms_cont_left dl dd a.on,.eycms_cont_left dl dt.on{ background:#772c6a; }
+    .eycms_cont_left dl dd a:active{ background:#772c6a; }
+    .eycms_cont_left dl.jslist dd{ background:#963885; }
+    .eycms_cont_left dl.jslist dd a:hover,.eycms_cont_left dl.jslist dd a.on{ background:#772c6a; }
+    .eycms_cont_left dl.jslist:hover{ background:#772c6a; }
+    /*栏目操作*/
+    .cate-dropup .cate-dropup-con a:hover{ background-color: #963885; }
+    /*按钮*/
+    a.ncap-btn-green { background-color: #963885; }
+    a:hover.ncap-btn-green { background-color: #772c6a; }
+    .flexigrid .sDiv2 .btn:hover { background-color: #963885; }
+    .flexigrid .mDiv .fbutton div.add{background-color: #963885; border: none;}
+    .flexigrid .mDiv .fbutton div.add:hover{ background-color: #772c6a;}
+    .flexigrid .mDiv .fbutton div.adds{color:#963885;border: 1px solid #963885;}
+    .flexigrid .mDiv .fbutton div.adds:hover{ background-color: #963885;}
+    /*选项卡字体*/
+    .tab-base a.current,
+    .tab-base a:hover.current {color:#963885 !important;}
+    .tab-base a.current:after,
+    .tab-base a:hover.current:after {background-color: #963885;}
+    .addartbtn input.btn:hover{ border-bottom: 1px solid #963885; }
+    .addartbtn input.btn.selected{ color: #963885;border-bottom: 1px solid #963885;}
+    /*会员导航*/
+    .member-nav-group .member-nav-item .btn.selected{background: #963885;border: 1px solid #963885;box-shadow: -1px 0 0 0 #963885;}
+    .member-nav-group .member-nav-item:first-child .btn.selected{border-left: 1px solid #963885 !important;}
+        
+    /* 商品订单列表标题 */
+   .flexigrid .mDiv .ftitle h3 {border-left: 3px solid #963885;} 
+    
+    /*分页*/
+    .pagination > .active > a, .pagination > .active > a:focus, 
+    .pagination > .active > a:hover, 
+    .pagination > .active > span, 
+    .pagination > .active > span:focus, 
+    .pagination > .active > span:hover { border-color: #963885;color:#963885; }
+    
+    .layui-form-onswitch {border-color: #963885 !important;background-color: #963885 !important;}
+    .onoff .cb-enable.selected { background-color: #963885 !important;border-color: #963885 !important;}
+    .onoff .cb-disable.selected {background-color: #963885 !important;border-color: #963885 !important;}
+    .pcwap-onoff .cb-enable.selected { background-color: #963885 !important;border-color: #963885 !important;}
+    .pcwap-onoff .cb-disable.selected {background-color: #963885 !important;border-color: #963885 !important;}
+    input[type="text"]:focus,
+    input[type="text"]:hover,
+    input[type="text"]:active,
+    input[type="password"]:focus,
+    input[type="password"]:hover,
+    input[type="password"]:active,
+    textarea:hover,
+    textarea:focus,
+    textarea:active { border-color:rgba(150,56,133,0.8);box-shadow: 0 0 0 1px rgba(150,56,133,0.5) !important;}
+    .input-file-show:hover .type-file-button {background-color:#963885 !important; }
+    .input-file-show:hover {border-color: #963885 !important;box-shadow: 0 0 5px rgba(150,56,133,0.5) !important;}
+    .input-file-show:hover span.show a,
+    .input-file-show span.show a:hover { color: #963885 !important;}
+    .input-file-show:hover .type-file-button {background-color: #963885 !important; }
+    .color_z { color: #963885 !important;}
+    a.imgupload{
+        background-color: #963885 !important;
+        border-color: #963885 !important;
+    }
+    /*专题节点按钮*/
+    .ncap-form-default .special-add{background-color:#963885;border-color:#963885;}
+    .ncap-form-default .special-add:hover{background-color:#772c6a;border-color:#772c6a;}
+    
+    /*更多功能标题*/
+    .on-off_panel .title::before {background-color:#963885;}
+    .on-off_panel .on-off_list-caidan .icon_bg .on{color: #963885;}
+    .on-off_panel .e-jianhao {color: #963885;}
+    
+     /*内容菜单*/
+    .ztree li a:hover{color:#963885 !important;}
+    .ztree li a.curSelectedNode{background-color: #963885 !important; border-color:#963885 !important;}
+    .layout-left .on-off-btn {background-color: #963885 !important;}
+
+    /*框架正在加载*/
+    .iframe_loading{width:100%;background:url(/public/static/admin/images/loading-0.gif) no-repeat center center;}
+    
+    .layui-btn-normal {background-color: #963885;}
+    .layui-laydate .layui-this{background-color: #963885 !important;}
+    .laydate-day-mark::after {background-color: #963885 !important;}
+	
+    /*上传框*/
+    .upload-body .upload-con .image-header .image-header-l .layui-btn {
+        background: #963885 !important;
+        border-color: #963885 !important;
+    }
+    .upload-body .layui-tab-brief>.layui-tab-title .layui-this {
+        color: #963885 !important;
+    }
+    .upload-body .layui-tab-brief>.layui-tab-title .layui-this:after {
+        border-bottom-color: #963885 !important;
+    }
+    .layui-layer-btn .layui-layer-btn0 {
+        border-color: #963885 !important;
+        background-color: #963885 !important;
+    }
+    .upload-body .layui-btn-yes {
+        background: #963885 !important;
+        border-color: #963885 !important;
+    }
+    .pagination li.active a {
+        color: #963885 !important;
+    }
+    .upload-nav .item.active {
+        color: #963885 !important;
+    }
+    .upload-body .upload-con .group-item.active a {
+        color: #963885 !important;
+    }
+    .upload-body .upload-con .group-item.active {
+        color: #963885 !important;
+        background-color: rgba(150,56,133,0.1);
+    }
+    .pagination li.active {
+        border-color: #963885 !important;
+    }
+    .upload-body .layui-btn-normal {
+        background-color: #963885 !important;
+    }
+    .upload-body .upload-con .image-list li.up-over .image-select-layer i {
+        color: #963885 !important;
+    }
+    .upload-body .upload-con .image-list li .layer .close {
+        color: #963885 !important;
+    }
+    .upload-dirimg-con .ztree li a.curSelectedNode {
+         background-color: #FFE6B0 !important; 
+         border-color: #FFB951 !important; 
+    }
+    /*.plug-item-content .plug-item-bottm a, .plug-item-content .plug-status .yes {
+        color: #963885 !important;
+    }*/
+    .ncap-form-default dd.opt .layui-btn{
+        background-color: #963885 !important;
+    }
+    .marketing_panel .title::before{
+        background-color: #963885 !important;
+    }
+    .marketing_panel .marketing_list ul.marketing-nav li a .button button {
+        color: #963885 !important;
+        border: 1px solid #963885 !important;
+    }

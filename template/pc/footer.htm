@@ -1,0 +1,61 @@
+<div class="webfoot wow fadeInUp">
+  <div class="webfoot_lxfs w1400">
+    <ul>
+      <li> <i> <img src="{eyou:global name='web_templets_pc' /}/skin/images/em.png"/> </i>
+        <p> <em>{eyou:global name='web_attrname_3' /}：</em> <span>{eyou:global name='web_attr_3' /}</span> </p>
+      </li>
+      <li> <i> <img src="{eyou:global name='web_templets_pc' /}/skin/images/tel.png"/> </i>
+        <p> <em>{eyou:global name='web_attrname_1' /}：</em> <span>{eyou:global name='web_attr_1' /}</span> </p>
+      </li>
+      <li> <i> <img src="{eyou:global name='web_templets_pc' /}/skin/images/add.png"/> </i>
+        <p> <em>{eyou:global name='web_attrname_2' /}：</em> <span>{eyou:global name='web_attr_2' /}</span> </p>
+      </li>
+    </ul>
+  </div>
+  <div class="webfoot_main w1400">
+    <div class="webfoot_left">
+      <div class="webfoot_logo"> <a href="{eyou:global name='web_basehost' /}"><img src="{eyou:global name='web_attr_7' /}"/></a> </div>
+      <div class="webfoot_copy">
+        <p>{eyou:global name='web_copyright' /}<br>
+          备案号：{eyou:global name='web_recordnum' /}</p>
+        <p><a href="{eyou:global name='web_basehost' /}/sitemap.xml" target="_blank">SiteMap</a></p>
+      </div>
+    </div>
+    <div class="webfoot_nav">
+      <ul>
+        {eyou:models type="top" loop="3" id="field"}
+        <li>
+          <p>{$field.typename}</p>
+          {eyou:models name="$field.children" loop="6" id="field2"} <a href="{$field2.typeurl}"> <i> <img src="{eyou:global name='web_templets_pc' /}/skin/images/xydh.png"/> </i> {$field2.typename} </a> {/eyou:models} </li>
+        {/eyou:models}
+      </ul>
+    </div>
+    <div class="webfoot_ewm">
+      <p><img src="{eyou:global name='web_attr_4' /}" width="130px" height="130px"/></p>
+      <span>{eyou:global name='web_attrname_4' /}</span> </div>
+    <div class="clear"></div>
+  </div>
+</div>
+<div class="webview">
+  <div class="webview_ewm"> <i> <img src="{eyou:global name='web_templets_pc' /}/skin/images/ewm.png"/> </i> <span>关注</span>
+    <p><img src="{eyou:global name='web_attr_4' /}"></p>
+  </div>
+  <div class="webview_tel"> <i> <img src="{eyou:global name='web_templets_pc' /}/skin/images/zj.png"/> </i> <span>联系</span>
+    <p>{eyou:global name='web_attr_1' /}</p>
+  </div>
+  <div class="webview_tel mobile_tel"> <a href="tel:{eyou:global name='web_attr_1' /}"> <i> <img src="{eyou:global name='web_templets_pc' /}/skin/images/tzj.png"/> </i> <span>联系</span> </a> </div>
+  <div class="webview_top"> <i> <img src="{eyou:global name='web_templets_pc' /}/skin/images/top.png"/> </i> <span>顶部</span> </div>
+</div>
+{eyou:static file='skin/js/common.js' /}
+{eyou:eq name='$Request.param.m' value='Index' }
+<div class="weblinks">
+  <div class="weblinks_main w1400">
+    <div class="weblinks_title"> <i> <img src="{eyou:global name='web_templets_pc' /}/skin/images/yl.png"/> </i>友情链接： </div>
+    <div class="weblinks_list"> {eyou:links titlelen='45' type='text'} <a href="{$field.url}" {$field.target}>{$field.title}</a> {/eyou:links} </div>
+  </div>
+</div>
+{eyou:else/}
+{/eyou:eq}
+<!-- 应用插件标签 start --> 
+{eyou:weapp type='default' /} 
+<!-- 应用插件标签 end --> 

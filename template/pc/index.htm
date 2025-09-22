@@ -1,0 +1,145 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<title>{eyou:global name='web_title' /}_{eyou:global name='web_name' /}</title>
+<meta name="keywords" content="{eyou:global name='web_keywords' /}" />
+<meta name="description" content="{eyou:global name='web_description' /}" />
+<link href="{eyou:global name='web_ico' /}" rel="shortcut icon" type="image/x-icon" />
+{eyou:static file='skin/css/common.css' /}
+{eyou:static file='skin/css/lystyle.css' /}
+{eyou:static file='skin/css/swiper.min.css' /}
+{eyou:static file='skin/css/animate.min.css' /}
+{eyou:static file='skin/js/jquery-3.7.0.min.js' /}
+{eyou:static file='skin/js/swiper.min.js' /}
+{eyou:static file='skin/js/swiper.animate.min.js' /}
+</head>
+<body>
+{eyou:include file="header.htm" /}
+<div class="eybanner">
+  <div class="eyba_swiper">
+    <div class="swiper-container">
+      <div class="swiper-wrapper"> {eyou:adv pid='1'}
+        <div class="swiper-slide"><img src="{$field.litpic}" alt="{$field.title}"/></div>
+        {/eyou:adv} </div>
+      <div class="swiper-pagination"></div>
+      <div class="swiper-button-prev"> <img src="{eyou:global name='web_templets_pc' /}/skin/images/prev.png"/> </div>
+      <div class="swiper-button-next"> <img src="{eyou:global name='web_templets_pc' /}/skin/images/next.png"/> </div>
+    </div>
+  </div>
+</div>
+{eyou:modelsartlist typeid='2'}
+<div class="wevproec">
+  <div class="wevproec_main w1400">
+    <div class="eytitle"> <span>RECOMMENDED PRODUCTS</span>
+      <p>推荐产品</p>
+    </div>
+    <div class="wevproec_list">
+      <ul>
+        {eyou:artlist loop="4" titlelen="30" id="field" flag="c"}
+        <li>
+          <div class="wevproec_con">
+            <div class="wevproec_img"> <a href="{$field.arcurl}"><img src="{$field.litpic}" alt="{$field.title}"/></a> </div>
+            <div class="wevproec_text"> <a href="{$field.arcurl}" class="wevproec_name">{$field.title}</a>
+              <p>{$field.seo_description}</p>
+              <a href="{$field.arcurl}" class="wevproec_btn"> <i> <img src="{eyou:global name='web_templets_pc' /}/skin/images/copy.png"/> </i> </a> </div>
+          </div>
+        </li>
+        {/eyou:artlist}
+      </ul>
+    </div>
+  </div>
+</div>
+{/eyou:modelsartlist}
+{eyou:modelsartlist typeid='1'}
+<div class="webabout">
+  <div class="webabout_main w1400">
+    <div class="webabout_left">
+      <div class="eytitle eytitle1"> <span>{eyou:field name='englist_name' /}</span>
+        <p>{eyou:field name='typename' /}</p>
+      </div>
+      <div class="webabout_con"> {eyou:type addtable='single_content'}{$field.content|html_msubstr=###,0,600}...{/eyou:type} </div>
+      <a href="{eyou:field name='typeurl' /}" class="webabout_btn"> 查看详情 <i> <img src="{eyou:global name='web_templets_pc' /}/skin/images/xy.png"/> </i> </a> </div>
+    <div class="webabout_right">
+      <div class="webabout_img"> <a href="{eyou:field name='typeurl' /}"><img src="{eyou:global name='web_templets_pc' /}/skin/images/aboutimg.jpg"/></a> </div>
+      <dl>
+        <dd> <i> <img src="{eyou:global name='web_templets_pc' /}/skin/images/yg.png"/> </i>
+          <p>经验丰富</p>
+        </dd>
+        <dd> <i> <img src="{eyou:global name='web_templets_pc' /}/skin/images/sh.png"/> </i>
+          <p>价格实惠</p>
+        </dd>
+        <div class="clear"></div>
+      </dl>
+    </div>
+  </div>
+</div>
+{/eyou:modelsartlist}
+{eyou:modelsartlist typeid='2'}
+<div class="webpro">
+  <div class="webpro_main w1400">
+    <div class="eytitle"> <span>{eyou:field name='englist_name' /}</span>
+      <p>{eyou:field name='typename' /}</p>
+    </div>
+    <div class="webpro_menu wow fadeInUp">
+      <div class="eypromenu_title"> <i> <img src="{eyou:global name='web_templets_pc' /}/skin/images/cp.png"/> </i>{eyou:field name='typename' /} </div>
+      <div class="eypromenu_list"> {eyou:models type="son" id="field"} <a href="{$field.typeurl}">{$field.typename}</a> {/eyou:models} </div>
+      <div class="eypromenu_more"> <a href="{eyou:field name='typeurl' /}"> 查看全部 <i> <img src="{eyou:global name='web_templets_pc' /}/skin/images/xy.png"/> </i> </a> </div>
+      <div class="clear"></div>
+    </div>
+    <div class="webpro_list">
+      <ul>
+        {eyou:artlist loop="8" titlelen="30" id="field"}
+        <li class="wow fadeInUp">
+          <div class="webpro_con">
+            <div class="webpro_img"> <a href="{$field.arcurl}"><img src="{$field.litpic}" alt="{$field.title}"/></a> </div>
+            <div class="webpro_text"> <a href="{$field.arcurl}" class="webpro_name">{$field.title}</a>
+              <p> <i> <img src="{eyou:global name='web_templets_pc' /}/skin/images/xh.png"/> </i>型号：{eyou:field aid='$field.aid' addfields='cpxh' /} </p>
+            </div>
+          </div>
+          <a href="{$field.arcurl}" class="webpro_btn"> 查看详情 <i> <img src="{eyou:global name='web_templets_pc' /}/skin/images/xy.png"/> </i> </a> </li>
+        {/eyou:artlist}
+      </ul>
+    </div>
+  </div>
+</div>
+{/eyou:modelsartlist}
+{eyou:modelsartlist typeid='3'}
+<div class="webarticle">
+  <div class="webarticle_main w1400">
+    <div class="eytitle eytitle2"> <span>{eyou:field name='englist_name' /}</span>
+      <p>{eyou:field name='typename' /}</p>
+    </div>
+    <div class="webarticle_swiper">
+      <div class="swiper-container">
+        <div class="swiper-wrapper"> {eyou:artlist titlelen="50" orderby="add_time" id="field"}
+          <div class="swiper-slide">
+            <div class="webarticle_con"> <span class="webarticle_time">{$field.add_time|MyDate='Y年m月d日',###}</span> <a href="{$field.arcurl}" class="webarticle_name">{$field.title}</a>
+              <div class="webarticle_ms">
+                <p>{$field.seo_description|html_msubstr=###,0,200}...</p>
+              </div>
+              <a href="{$field.arcurl}" class="webarticle_more"> 查看详情 <i> <img src="{eyou:global name='web_templets_pc' /}/skin/images/xq.png"/> </i> </a> </div>
+          </div>
+          {/eyou:artlist} </div>
+        <div class="swiper-button-prev"> <img src="{eyou:global name='web_templets_pc' /}/skin/images/wz.png"/> </div>
+        <div class="swiper-button-next"> <img src="{eyou:global name='web_templets_pc' /}/skin/images/wy.png"/> </div>
+      </div>
+    </div>
+  </div>
+</div>
+{/eyou:modelsartlist}
+<div class="webpartner w1400">
+  <div class="webpartner_swiper">
+    <div class="swiper-container">
+      <div class="swiper-wrapper"> {eyou:artlist titlelen="50" orderby="add_time" id="field" typeid='30'}
+        <div class="swiper-slide"><img src="{$field.litpic}"/></div>
+        {/eyou:artlist} </div>
+    </div>
+    <div class="swiper-button-prev"> <img src="{eyou:global name='web_templets_pc' /}/skin/images/prev.png"/> </div>
+    <div class="swiper-button-next"> <img src="{eyou:global name='web_templets_pc' /}/skin/images/next.png"/> </div>
+  </div>
+</div>
+{eyou:include file="footer.htm" /}
+</body>
+</html>

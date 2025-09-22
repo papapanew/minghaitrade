@@ -1,0 +1,52 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<title>{$eyou.field.seo_title}</title>
+<meta name="keywords" content="{eyou:global name='web_keywords' /}" />
+<meta name="description" content="{eyou:global name='web_description' /}" />
+<link href="{eyou:global name='web_ico' /}" rel="shortcut icon" type="image/x-icon" />
+{eyou:static file='skin/css/common.css' /}
+{eyou:static file='skin/css/nystyle.css' /}
+{eyou:static file='skin/css/swiper.min.css' /}
+{eyou:static file='skin/js/jquery-3.7.0.min.js' /}
+{eyou:static file='skin/js/swiper.min.js' /}
+</head>
+<body style="background-color:#f9f9f9;">
+{eyou:include file="header.htm" /}
+<div class="ey_banner"> <img src="{eyou:adv pid='2' loop='1'}{$field.litpic}{/eyou:adv}" class="ba_img"/>
+  <div class="ba_con">
+    <p>{$eyou.field.typeid|gettoptype=###,'typename'}</p>
+    <i></i><span>{$eyou.field.typeid|gettoptype=###,'englist_name'}</span></div>
+</div>
+<div class="ey_crumb"> <i></i>
+  <div class="ey_crumb_main">
+    <ul>
+      <li class="ey_active"><a href="{$eyou.field.typeurl}">{$eyou.field.typename}</a></li>
+      <div class="clear"></div>
+    </ul>
+    <p><img src="{eyou:global name='web_templets_pc' /}/skin/images/crumb.png" class="crumb"/>当前位置：{eyou:position/}</p>
+    <div class="clear"></div>
+  </div>
+</div>
+<div class="ey_news">
+  <div class="ey_news_main">
+    <div class="ey_news_list">
+      <ul class="newul">
+        {eyou:list titlelen='40' loop='8'}
+        <li>
+          <div class="new_box">
+            <p><a href="{$field.arcurl}">{$field.title}</a></p>
+            <em>{$field.add_time|MyDate='Y-m-d',###}</em> <span>{$field.seo_description|html_msubstr=###,0,180,true}</span> </div>
+        </li>
+        {/eyou:list}
+      </ul>
+    </div>
+    <div class="clear"></div>
+    <div id="pages">{eyou:pagelist listitem="index,pre,next,end,pageno" listsize="1" /}</div>
+  </div>
+</div>
+{eyou:include file="footer.htm" /}
+</body>
+</html>

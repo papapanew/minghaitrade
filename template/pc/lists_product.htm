@@ -1,0 +1,107 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<title>{$eyou.field.seo_title}</title>
+<meta name="keywords" content="{eyou:global name='web_keywords' /}" />
+<meta name="description" content="{eyou:global name='web_description' /}" />
+<link href="{eyou:global name='web_ico' /}" rel="shortcut icon" type="image/x-icon" />
+{eyou:static file='skin/css/common.css' /}
+{eyou:static file='skin/css/nystyle.css' /}
+{eyou:static file='skin/css/swiper.min.css' /}
+{eyou:static file='skin/js/jquery-3.7.0.min.js' /}
+{eyou:static file='skin/js/swiper.min.js' /}
+</head>
+<body style="background-color:#f9f9f9;">
+{eyou:include file="header.htm" /}
+<div class="ey_banner"> <img src="{eyou:adv pid='2' loop='1'}{$field.litpic}{/eyou:adv}" class="ba_img"/>
+  <div class="ba_con">
+    <p>{$eyou.field.typeid|gettoptype=###,'typename'}</p>
+    <i></i><span>{$eyou.field.typeid|gettoptype=###,'englist_name'}</span></div>
+</div>
+<div class="ey_crumb"> <i></i>
+  <div class="ey_crumb_main">
+    <ul>
+      <li class="ey_active"><a href="{$eyou.field.typeurl}">{$eyou.field.typename}</a></li>
+      <div class="clear"></div>
+    </ul>
+    <p><img src="{eyou:global name='web_templets_pc' /}/skin/images/crumb.png" class="crumb"/>当前位置：{eyou:position/}</p>
+    <div class="clear"></div>
+  </div>
+</div>
+<div class="webproduct">
+  <div class="webpro_left">
+    <div class="h_left">
+      <div class="cp_type">
+        <div class="hd">
+          <p><img src="{eyou:global name='web_templets_pc' /}/skin/images/proico1.png"/>{$eyou.field.typeid|gettoptype=###,'typename'}</p>
+          <span>{$eyou.field.typeid|gettoptype=###,'englist_name'}</span><em></em><i></i></div>
+        <div class="bd">
+        <ul>
+          {eyou:models type="first" currentstyle="active"}
+          {/* 默认不展开任何菜单 */}
+          {eyou:assign name='should_expand' value='0' /}
+          {eyou:assign name='is_current_category' value='0' /}
+          {eyou:assign name='has_current_child' value='0' /}
+          
+          {/* 检查当前栏目是否为这个一级栏目 */}
+          {eyou:eq name='$field.id' value='$eyou.field.typeid'}
+          {eyou:assign name='should_expand' value='1' /}
+          {eyou:assign name='is_current_category' value='1' /}
+          {/eyou:eq}
+          
+          {/* 检查子栏目中是否包含当前访问的栏目 */}
+          {eyou:notempty name="$field.children"}
+          {eyou:models name="$field.children" id="child_field"}
+          {eyou:eq name='$child_field.id' value='$eyou.field.typeid'}
+          {eyou:assign name='should_expand' value='1' /}
+          {eyou:assign name='has_current_child' value='1' /}
+          {/eyou:eq}
+          {/eyou:models}
+          {/eyou:notempty} <li{eyou:eq name='$should_expand' value='1'} class="on"{/eyou:eq}>
+          <p><a href="{$field.typeurl}"{eyou:eq name='$is_current_category' value='1'} class="active"{/eyou:eq}>{$field.typename}</a>{eyou:notempty name="$field.children"}<span></span>{/eyou:notempty}</p>
+          {eyou:notempty name="$field.children"} <div{eyou:eq name='$should_expand' value='1'} style="display:block;"{eyou:else /} style="display:none;"{/eyou:eq}> {eyou:models name="$field.children" id="field2"} <a href="{$field2.typeurl}"{eyou:eq name='$field2.id' value='$eyou.field.typeid'} class="active"{/eyou:eq}>{$field2.typename}</a> {/eyou:models}
+          </div>
+          {/eyou:notempty}
+          </li>
+          {/eyou:models}
+        </ul>
+      </div>
+    </div>
+    {eyou:static file='skin/js/nav.js' /} </div>
+  {eyou:modelsartlist typeid='3'}
+  <div class="eyxgwz">
+    <div class="eyxgwz_title">
+      <p><img src="{eyou:global name='web_templets_pc' /}/skin/images/artico.png"/>{eyou:field name='typename' /}</p>
+      <span>{eyou:field name='englist_name' /}</span><em></em></div>
+    <div class="eyxgwz_list">
+      <dl>
+        {eyou:artlist titlelen='50' loop="5"}
+        <dd><a href="{$field.arcurl}"><i></i>{$field.title}</a></dd>
+        {/eyou:artlist}
+      </dl>
+    </div>
+  </div>
+  {/eyou:modelsartlist} </div>
+<div class="webpro_right">
+  <ul>
+    {eyou:list titlelen='40' loop='12' id='field'}
+    <li>
+      <div class="webpro_con">
+        <div class="webpro_img"> <a href="{$field.arcurl}"><img src="{$field.litpic}" alt="{$field.title}" /></a> </div>
+        <div class="webpro_text"> <a href="{$field.arcurl}" class="webpro_name">{$field.title}</a>
+          <p> <i> <img src="{eyou:global name='web_templets_pc' /}/skin/images/xh.png"/> </i>型号：{eyou:field aid='$field.aid' addfields='cpxh' /} </p>
+        </div>
+      </div>
+      <a href="{$field.arcurl}" class="webpro_btn"> 查看详情 <i> <img src="{eyou:global name='web_templets_pc' /}/skin/images/xy.png"/> </i> </a></li>
+    {/eyou:list}
+    <div class="clear"></div>
+  </ul>
+  <div id="pages">{eyou:pagelist listitem="index,pre,next,end,pageno" listsize="1" /}</div>
+</div>
+<div class="clear"></div>
+</div>
+{eyou:include file="footer.htm" /}
+</html>
+</body>

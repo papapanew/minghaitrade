@@ -1,0 +1,67 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<title>{$eyou.field.seo_title}</title>
+<meta name="keywords" content="{$eyou.field.seo_keywords}" />
+<meta name="description" content="{$eyou.field.seo_description}" />
+<link href="{eyou:global name='web_ico' /}" rel="shortcut icon" type="image/x-icon" />
+{eyou:static file='skin/css/common.css' /}
+{eyou:static file='skin/css/nystyle.css' /}
+{eyou:static file='skin/css/swiper.min.css' /}
+{eyou:static file='skin/js/jquery-3.7.0.min.js' /}
+{eyou:static file='skin/js/swiper.min.js' /}
+</head>
+<body style="background-color:#f9f9f9;">
+{eyou:include file="header.htm" /}
+<div class="ey_banner"> <img src="{eyou:adv pid='2' loop='1'}{$field.litpic}{/eyou:adv}" class="ba_img"/>
+  <div class="ba_con">
+    <p>{$eyou.field.typeid|gettoptype=###,'typename'}</p>
+    <i></i><span>{$eyou.field.typeid|gettoptype=###,'englist_name'}</span></div>
+</div>
+<div class="ey_crumb"> <i></i>
+  <div class="ey_crumb_main">
+    <ul>
+      <li class="ey_active"><a href="{$eyou.field.typeurl}">{$eyou.field.typename}</a></li>
+      <div class="clear"></div>
+    </ul>
+    <p><img src="{eyou:global name='web_templets_pc' /}/skin/images/crumb.png" class="crumb"/>当前位置：{eyou:position/}</p>
+    <div class="clear"></div>
+  </div>
+</div>
+<div class="ey_cont">
+  <div class="ey_cont_infor">
+    <div class="ey_continfor_main">
+      <div class="ey_continfor_img"> <img src="{eyou:global name='web_templets_pc' /}/skin/images/contactimg.jpg" class="contactimg"/>
+        <div class="contacttext">
+          <p>{$eyou.field.typename}</p>
+          <i></i> <span>可以通过以下方式联系我们<br />
+          我们将会提供专业贴心的服务</span> <em></em> </div>
+      </div>
+      <div class="ey_continfor_con">
+        <div class="ey_cont_ewm"> <span><img src="{eyou:global name='web_attr_4' /}"/></span>
+          <p>扫码关注我们</p>
+        </div>
+        <div class="ey_cont_lxfs">
+          <ul>
+            <li> <img src="{eyou:global name='web_templets_pc' /}/skin/images/lxico1.png"/> <span>{eyou:global name='web_attrname_1' /}</span>
+              <p>{eyou:global name='web_attr_1' /}</p>
+            </li>
+            <li> <img src="{eyou:global name='web_templets_pc' /}/skin/images/lxico2.png"/> <span>{eyou:global name='web_attrname_3' /}</span>
+              <p>{eyou:global name='web_attr_3' /}</p>
+            </li>
+            <li> <img src="{eyou:global name='web_templets_pc' /}/skin/images/lxico3.png"/> <span>{eyou:global name='web_attrname_2' /}</span>
+              <p>{eyou:global name='web_attr_2' /}</p>
+            </li>
+            <div class="clear"></div>
+          </ul>
+        </div>
+        <div class="clear"></div>
+      </div>
+    </div>
+  </div>
+</div>
+{eyou:include file="footer.htm" /}
+</body>
+</html>

@@ -1,0 +1,69 @@
+<div {eyou:eq name='$Request.param.m' value='Index' } class="webtop" {eyou:else/}class="webtop neitop"{/eyou:eq}>
+  <div class="webtop_main">
+    <div class="web_logo"> <a href="{eyou:global name='web_basehost' /}"><img src="{eyou:global name='web_logo' /}" alt="{eyou:global name='web_title' /}"/></a> </div>
+    <div class="websearch"> {eyou:searchform type='default'}
+      <form action="{$field.action}" method="post" onsubmit="return checkFrom(this);">
+        <div class="scipt">
+          <input type="text" name="keywords" placeholder="请输入您关键词..."/>
+        </div>
+        <div class="scbtn">
+          <button type="submit"> <i> <img src="{eyou:global name='web_templets_pc' /}/skin/images/ss.png"/> </i> </button>
+        </div>
+        <div class="clear"></div>
+        {$field.hidden}
+      </form>
+      {/eyou:searchform} <a href="javascript:;" class="close"> <img src="{eyou:global name='web_templets_pc' /}/skin/images/gb.png"/> </a> </div>
+    <div class="websearch_btn"> <a href="javascript:;"> <i> <img src="{eyou:global name='web_templets_pc' /}/skin/images/ss.png"/> </i> </a> </div>
+    <div class="web_nav">
+      <div class="nav_menu">
+        <p> <span></span> <span></span> <span></span> </p>
+      </div>
+      <div class="nav_list">
+        <ul>
+          <li {eyou:eq name='$Request.param.m' value='Index' } class="active" {/eyou:eq}><a href="{eyou:global name='web_basehost' /}">{eyou:lang name='sys1' /}</a></li>
+          {eyou:models type="top" id="field" currentstyle="active" loop="6"}
+          <li class="{$field.currentstyle}"><a href="{$field.typeurl}">{$field.typename}</a> {eyou:notempty name="$field.children"} <i></i>
+            <ul>
+              {eyou:models name="$field.children" id="field2"}
+              <li><a href="{$field2.typeurl}">{$field2.typename}</a></li>
+              {/eyou:models}
+            </ul>
+            {/eyou:notempty} </li>
+          {/eyou:models}
+          <li class="{$field.currentstyle}">
+            {eyou:language type='default'}
+                <a href="{$field.url}"><img src="{$field.logo}" alt="{$field.title}">{$field.title}</a>
+            {/eyou:language}
+          </li>
+        </ul>
+        <div class="nav_mask"></div>
+      </div>
+    </div>
+    <div class="clear"></div>
+  </div>
+</div>
+<script type="text/javascript">
+    $('.nav_mask').click(function () {
+      $('.nav_list').removeClass('open')
+    })
+    $('.nav_menu,.nav_list').click(function (e) {
+      e.stopPropagation()
+    })
+    $('.web_nav').find('.nav_menu').click(function (e) {
+      $('.nav_list').toggleClass('open')
+    })
+    $(function () {
+      $(".nav_list ul li i").click(function () {
+        var b = false;
+        if ($(this).attr("class") == "cur") {
+          b = true;
+        }
+        $(".nav_list ul li ul").prev("i").removeClass("cur");
+        $(".nav_list>ul>li").children("ul").slideUp("fast");
+        if (!b) {
+          $(this).addClass("cur");
+          $(this).siblings("ul").slideDown("fast");
+        }
+      })
+    });
+  </script>

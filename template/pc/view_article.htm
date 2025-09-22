@@ -1,0 +1,55 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<title>{$eyou.field.seo_title}</title>
+<meta name="keywords" content="{$eyou.field.seo_keywords}" />
+<meta name="description" content="{$eyou.field.seo_description}" />
+<link href="{eyou:global name='web_ico' /}" rel="shortcut icon" type="image/x-icon" />
+{eyou:static file='skin/css/common.css' /}
+{eyou:static file='skin/css/nystyle.css' /}
+{eyou:static file='skin/css/swiper.min.css' /}
+{eyou:static file='skin/js/jquery-3.7.0.min.js' /}
+{eyou:static file='skin/js/swiper.min.js' /}
+</head>
+<body style="background-color:#f9f9f9;">
+{eyou:include file="header.htm" /}
+<div class="ey_banner"> <img src="{eyou:adv pid='2' loop='1'}{$field.litpic}{/eyou:adv}" class="ba_img"/>
+  <div class="ba_con">
+    <p>{$eyou.field.typeid|gettoptype=###,'typename'}</p>
+    <i></i><span>{$eyou.field.typeid|gettoptype=###,'englist_name'}</span></div>
+</div>
+<div class="ey_crumb"> <i></i>
+  <div class="ey_crumb_main">
+    <ul>
+      <li class="ey_active"><a href="{$eyou.field.typeurl}">{$eyou.field.typename}</a></li>
+      <div class="clear"></div>
+    </ul>
+    <p><img src="{eyou:global name='web_templets_pc' /}/skin/images/crumb.png" class="crumb"/>当前位置：{eyou:position/}</p>
+    <div class="clear"></div>
+  </div>
+</div>
+<div class="eyxwdet">
+<div class="eyxwdet_main">
+  <h1 class="eyxwdet_name">{$eyou.field.title}</h1>
+  <div class="eyxwdet_tips"> <span><img src="{eyou:global name='web_templets_pc' /}/skin/images/ico04.png" />更新时间：{$eyou.field.update_time|MyDate='Y-m-d',###}</span><span><img src="{eyou:global name='web_templets_pc' /}/skin/images/ico05.png" />点击次数：{eyou:arcclick /}</span> </div>
+  <div class="eyxwdet_content"> {$eyou.field.content} </div>
+</div>
+<div class="eypn">
+  <ul>
+    {eyou:prenext get='pre' titlelen='30'}
+    <li><i>{eyou:lang name='sys11' /}</i><a href="{$field.arcurl}">{$field.title}</a></li>
+    {eyou:else /}
+    <li><i>{eyou:lang name='sys11' /}</i><a>{eyou:lang name='sys10' /}</a></li>
+    {/eyou:prenext}
+    {eyou:prenext get='next' titlelen='30'}
+    <li><i>{eyou:lang name='sys12' /}</i><a href="{$field.arcurl}">{$field.title}</a></li>
+    {eyou:else /}
+    <li><i>{eyou:lang name='sys12' /}</i><a>{eyou:lang name='sys10' /}</a></li>
+    {/eyou:prenext}
+  </ul>
+</div>
+{eyou:include file="footer.htm" /}
+</html>
+</body>

@@ -1,0 +1,124 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<title>{$eyou.field.seo_title}</title>
+<meta name="keywords" content="{$eyou.field.seo_keywords}" />
+<meta name="description" content="{$eyou.field.seo_description}" />
+<link href="{eyou:global name='web_ico' /}" rel="shortcut icon" type="image/x-icon" />
+{eyou:static file='skin/css/common.css' /}
+{eyou:static file='skin/css/nystyle.css' /}
+{eyou:static file='skin/css/swiper.min.css' /}
+{eyou:static file='skin/js/jquery-3.7.0.min.js' /}
+{eyou:static file='skin/js/swiper.min.js' /}
+</head>
+<body style="background-color:#f9f9f9;">
+{eyou:include file="header.htm" /}
+<div class="ey_banner"> <img src="{eyou:adv pid='2' loop='1'}{$field.litpic}{/eyou:adv}" class="ba_img"/>
+  <div class="ba_con">
+    <p>{$eyou.field.typeid|gettoptype=###,'typename'}</p>
+    <i></i><span>{$eyou.field.typeid|gettoptype=###,'englist_name'}</span></div>
+</div>
+<div class="ey_crumb"> <i></i>
+  <div class="ey_crumb_main">
+    <ul>
+      <li class="ey_active"><a href="{$eyou.field.typeurl}">{$eyou.field.typename}</a></li>
+      <div class="clear"></div>
+    </ul>
+    <p><img src="{eyou:global name='web_templets_pc' /}/skin/images/crumb.png" class="crumb"/>当前位置：{eyou:position/}</p>
+    <div class="clear"></div>
+  </div>
+</div>
+<div class="eygy">
+  <div class="eygy_profile">
+    <div class="eygsjj_main">
+      <div class="web_title1">
+        <p>{$eyou.field.typename}</p>
+        <span><i></i></span></div>
+      <div class="eygsjj_con">
+        <div class="eygsjj_name">
+          <p>{$eyou.field.typename}</p>
+          <i></i></div>
+        <div class="eygsjj_ms">
+          <p>{$eyou.field.content}</p>
+        </div>
+        <ul>
+          <li>
+            <p>2009</p>
+            <span>2009年公司成立</span></li>
+          <li>
+            <p>8</p>
+            <span>拥有8大专利</span></li>
+          <li>
+            <p>200+</p>
+            <span>专业检测设备200余套</span></li>
+          <div class="clear"></div>
+        </ul>
+      </div>
+      <div class="eygsjj_img"><img src="{eyou:global name='web_templets_pc' /}/skin/images/nyabimg.png"/></div>
+      <div class="clear"></div>
+    </div>
+    <div id="ab02"></div>
+  </div>
+  <div class="eygy_culture">
+    <div class="eyculture_main">
+      <div class="web_title1 web_title2">
+        <p>企业文化</p>
+        <span><i></i></span></div>
+      <ul>
+        <li>
+          <div class="eyculture_con"> <i class="gyico2"></i>
+            <p>我们的使命</p>
+            <em></em> <span>为客户保驾护航，为您提供更好的服务，我们一直在努力</span> </div>
+        </li>
+        <li>
+          <div class="eyculture_con"> <i class="gyico3"></i>
+            <p>我们的经营理念</p>
+            <em></em> <span>提供有竞争力的解决方案和服务持续创造客户价值</span> </div>
+        </li>
+        <li>
+          <div class="eyculture_con"> <i class="gyico4"></i>
+            <p>我们的价值观</p>
+            <em></em> <span>诚信高效服务用户团结进取争创效益追求卓越</span> </div>
+        </li>
+        <div class="clear"></div>
+      </ul>
+    </div>
+    <div id="ab03"></div>
+  </div>
+  {eyou:modelsartlist typeid='24'}
+  <div class="eygy_honor">
+    <div class="eygyhonor_main">
+      <div class="web_title1">
+        <p>{eyou:field name='typename' /}</p>
+        <span><i></i></span></div>
+      <div class="eygyhonor_list">
+        <ul>
+          {eyou:artlist titlelen='50' id='field' loop="10"}
+          <li>
+            <div class="eygyhonor_img"><a href="{$field.arcurl}" title="{$field.title}"><img src="{$field.litpic}"></a></div>
+            <div class="eygyhonor_text"> <a href="{$field.arcurl}" class="eygyhonor_name">{$field.title}</a> 
+              <!-- <p>所获单位：{$field.title}</p> --> 
+              <i><img src="{eyou:global name='web_templets_pc' /}/skin/images/hnr_xs.png"/></i> </div>
+            <span></span> </li>
+          {/eyou:artlist}
+        </ul>
+      </div>
+    </div>
+  </div>
+  {/eyou:modelsartlist} </div>
+<script>
+  $(function () { $(".eygyhonor_list ul li").first().addClass('active'); });
+
+  $(".eygyhonor_list ul li span").click(function () {
+    if ($(this).parents('li').hasClass('active')) {
+      $(this).parents('li').removeClass('active');
+    } else {
+      $(this).parents('li').addClass('active');
+    }
+  });
+</script> 
+{eyou:include file="footer.htm" /}
+</body>
+</html>

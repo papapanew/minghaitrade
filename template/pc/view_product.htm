@@ -1,0 +1,272 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<title>{$eyou.field.seo_title}</title>
+<meta name="keywords" content="{eyou:global name='web_keywords' /}" />
+<meta name="description" content="{eyou:global name='web_description' /}" />
+<link href="{eyou:global name='web_ico' /}" rel="shortcut icon" type="image/x-icon" />
+{eyou:static file='skin/css/common.css' /}
+{eyou:static file='skin/css/nystyle.css' /}
+{eyou:static file='skin/css/swiper.min.css' /}
+{eyou:static file='skin/js/jquery-3.7.0.min.js' /}
+{eyou:static file='skin/js/swiper.min.js' /}
+</head>
+<body style="background-color:#f9f9f9;">
+{eyou:include file="header.htm" /}
+<div class="ey_banner"> <img src="{eyou:adv pid='2' loop='1'}{$field.litpic}{/eyou:adv}" class="ba_img"/>
+  <div class="ba_con">
+    <p>{$eyou.field.typeid|gettoptype=###,'typename'}</p>
+    <i></i><span>{$eyou.field.typeid|gettoptype=###,'englist_name'}</span></div>
+</div>
+<div class="ey_crumb"> <i></i>
+  <div class="ey_crumb_main">
+    <ul>
+      <li class="ey_active"><a href="{$eyou.field.typeurl}">{$eyou.field.typename}</a></li>
+      <div class="clear"></div>
+    </ul>
+    <p><img src="{eyou:global name='web_templets_pc' /}/skin/images/crumb.png" class="crumb"/>当前位置：{eyou:position/}</p>
+    <div class="clear"></div>
+  </div>
+</div>
+<div class="eypronr">
+  <div class="eypronr_main">
+    <div class="eypronr_img prodetail_img">
+      <div id="preview">
+        <div class="jqzoom" id="spec-n1"> 
+          <!-- <link rel="stylesheet" type="text/css" href="{eyou:global name='web_templets_pc' /}/skin/css/public.css">
+                    <a href="javascript:void(0);" onclick="$('.videoItem').show();mybaidu.window.SetPlayer();return false;" class="videoIco"></a>
+                    <div class="videoItem"  ><div class="Warning" style="display:none"><b></b><br>抱歉，由于流量限制，视频无法播放。</div>
+                    <a href="javascript:void(0);" onclick="$('.videoItem').hide();mybaidu.window.SetPause(); return false;"></a>
+                    <script type="text/javascript">var _player=false;</script>
+                    <iframe name='mybaidu' src="mp4" scrolling='no' height='100%' width='100%' style='border:0px;padding:0px;margin:0px'  allowfullscreen='true'></iframe> </div> -->
+          <div id="ceshi"> {eyou:volist name="$eyou.field.image_list" loop='1'} <img src="{$field.image_url}" jqimg="{$field.image_url}"/> {/eyou:volist} </div>
+        </div>
+        <div id="spec-n5">
+          <div id="spec-list">
+            <ul class="list-h">
+              {eyou:volist name="$eyou.field.image_list" loop='4'}
+              <li>
+                <p {eyou:eq name='$i' value='1'}style="border: 1px solid rgb(23, 134, 85);"{/eyou:eq}><img src="{$field.image_url}"></p>
+              </li>
+              {/eyou:volist}
+            </ul>
+          </div>
+        </div>
+      </div>
+      <script type=text/javascript>
+                $(function(){			
+                   $("#ceshi").jqueryzoom({
+                        xzoom:446,
+                        yzoom:446,
+                        offset:10,
+                        position:"right",
+                        preload:1,
+                        lens:1
+                    });							
+                    /*$("#spec-list").jdMarquee({
+                        deriction:"left",
+                        step:1,
+                        speed:4,
+                        delay:10,
+                        control:true,
+                        _front:"#spec-right",
+                        _back:"#spec-left"
+                    });*/
+                    $("#spec-list li").bind("mouseover",function(){
+                        var src=$(this).children().children('img').attr("src");
+                        $("#ceshi").css("width", "100%");
+                        $("#ceshi").css("height", "100%");
+                        $("#ceshi").css("position", "");
+                        $("#spec-n1 img").eq(0).attr({
+                            src:src.replace("\/n5\/","\/n1\/"),
+                            jqimg:src.replace("\/n5\/","\/n0\/")
+                        });
+                        $("#spec-list li p").each(function(){
+                            $(this).css({
+                                "border":"1px solid #e5e5e5"
+                            });
+                            })
+                        $(this).children('p').css({
+                            "border":"1px solid #178655"
+                        });
+                    });	
+                })
+            </script> 
+      {eyou:static file='skin/js/jqueryzoom.js' /} </div>
+    <div class="eypronr_text">
+      <div class="eypronr_name">{$eyou.field.title}</div>
+      <h1 class="eypronr_ms"> <span><img src="{eyou:global name='web_templets_pc' /}/skin/images/ico10.png"/>产品简介</span>
+        <p>{$eyou.field.seo_description}</p>
+      </h1>
+      <div class="eypronr_tags">
+        <dl>
+          <dd><i></i>产品型号：{$eyou.field.cpxh}</dd>
+          <dd><i></i>更新时间：{$eyou.field.update_time|MyDate='Y-m-d',###}</dd>
+          <dd><i></i>厂商性质：{$eyou.field.cjxz}</dd>
+          <dd><i></i>访问量：{eyou:arcclick /}</dd>
+          <div class="clear"></div>
+        </dl>
+      </div>
+      <div class="eypronr_btm"> <a href="#cpzx" class="btn01"><i><em></em></i><span>产品咨询</span></a> <a href="tel:{eyou:global name='web_attr_1' /}" class="btn02"><i><em></em></i><span>{eyou:global name='web_attr_1' /}</span></a>
+        <div class="clear"></div>
+      </div>
+    </div>
+    <div class="clear"></div>
+  </div>
+  <div class="eypronr_content">
+    <div class="eypronr_left">
+      <div class="h_left">
+        <div class="cp_type">
+          <div class="hd">
+            <p><img src="{eyou:global name='web_templets_pc' /}/skin/images/proico1.png" />{$eyou.field.typeid|gettoptype=###,'typename'}</p>
+            <span>{$eyou.field.typeid|gettoptype=###,'englist_name'}</span><em></em><i></i></div>
+          <div class="bd">
+          <ul>
+            {eyou:models type="first" currentstyle="active"}
+            {/* 默认不展开任何菜单 */}
+            {eyou:assign name='should_expand' value='0' /}
+            {eyou:assign name='is_current_category' value='0' /}
+            {eyou:assign name='has_current_child' value='0' /}
+            
+            {/* 检查当前栏目是否为这个一级栏目 */}
+            {eyou:eq name='$field.id' value='$eyou.field.typeid'}
+            {eyou:assign name='should_expand' value='1' /}
+            {eyou:assign name='is_current_category' value='1' /}
+            {/eyou:eq}
+            
+            {/* 检查子栏目中是否包含当前访问的栏目 */}
+            {eyou:notempty name="$field.children"}
+            {eyou:models name="$field.children" id="child_field"}
+            {eyou:eq name='$child_field.id' value='$eyou.field.typeid'}
+            {eyou:assign name='should_expand' value='1' /}
+            {eyou:assign name='has_current_child' value='1' /}
+            {/eyou:eq}
+            {/eyou:models}
+            {/eyou:notempty} <li{eyou:eq name='$should_expand' value='1'} class="on"{/eyou:eq}>
+            <p><a href="{$field.typeurl}"{eyou:eq name='$is_current_category' value='1'} class="active"{/eyou:eq}>{$field.typename}</a>{eyou:notempty name="$field.children"}<span></span>{/eyou:notempty}</p>
+            {eyou:notempty name="$field.children"} <div{eyou:eq name='$should_expand' value='1'} style="display:block;"{eyou:else /} style="display:none;"{/eyou:eq}> {eyou:models name="$field.children" id="field2"} <a href="{$field2.typeurl}"{eyou:eq name='$field2.id' value='$eyou.field.typeid'} class="active"{/eyou:eq}>{$field2.typename}</a> {/eyou:models}
+            </div>
+            {/eyou:notempty}
+            </li>
+            {/eyou:models}
+          </ul>
+        </div>
+      </div>
+    </div>
+    {eyou:modelsartlist typeid='3'}
+    <div class="eyxgwz">
+      <div class="eyxgwz_title">
+        <p><img src="{eyou:global name='web_templets_pc' /}/skin/images/artico.png"/>{eyou:field name='typename' /}</p>
+        <span>{eyou:field name='englist_name' /}</span><em></em></div>
+      <div class="eyxgwz_list">
+        <dl>
+          {eyou:artlist titlelen='50' loop="5"}
+          <dd><a href="{$field.arcurl}"><i></i>{$field.title}</a></dd>
+          {/eyou:artlist}
+        </dl>
+      </div>
+    </div>
+    {/eyou:modelsartlist} </div>
+  {eyou:static file='skin/js/nav.js' /}
+  <div class="eypronr_right">
+    <div class="eypronr_con">
+      <div class="eypronr_tit"><span>详细介绍</span><a href="#cpzx">在线留言</a>
+        <div class="clear"></div>
+      </div>
+      <div class="pronrtext"> {$eyou.field.content} </div>
+    </div>
+    <div id="cpzx"></div>
+    <div class="webpro_pn"> {eyou:prenext get='pre' titlelen='30'}
+      <p class="pro_prev"><img src="{eyou:global name='web_templets_pc' /}/skin/images/jt11.png"/>{eyou:lang name='sys11' /}：<a href="{$field.arcurl}">{$field.title}</a></p>
+      {eyou:else /}
+      <p class="pro_prev"><img src="{eyou:global name='web_templets_pc' /}/skin/images/jt11.png"/>{eyou:lang name='sys11' /}：<a>{eyou:lang name='sys10' /}</a></p>
+      {/eyou:prenext} <a href="{$eyou.field.typeurl}" class="NyProAll"><img src="{eyou:global name='web_templets_pc' /}/skin/images/proall.png" />返回列表</a> {eyou:prenext get='next' titlelen='30'}
+      <p class="pro_next">{eyou:lang name='sys12' /}：<a href="{$field.arcurl}">{$field.title}</a><img src="{eyou:global name='web_templets_pc' /}/skin/images/jt0.png"/></p>
+      {eyou:else /}
+      <p class="pro_next">{eyou:lang name='sys12' /}：<a>{eyou:lang name='sys10' /}</a><img src="{eyou:global name='web_templets_pc' /}/skin/images/jt0.png"/></p>
+      {/eyou:prenext}
+      <div class="clear"></div>
+    </div>
+    <div id="cpzx"></div>
+    <div class="proorder_main">
+      <div class="web_title1">
+        <p>在线留言</p>
+        <span><i></i></span></div>
+      <div class="web_msg" id="web_msg"> {eyou:guestbookform type='default' typeid="6"}
+        <form method="POST" action="{$field.action}" {$field.formhidden} onsubmit="{$field.submit}">
+          <h3>留言框 </h3>
+          <ul>
+            <li>
+              <h4 class="xh">{$field.itemname_1}：</h4>
+              <div class="msg_ipt1">
+                <input class="textborder" size="30" type='text' id='attr_1' name='{$field.attr_1}' value="{$eyou.field.title}" placeholder="请输入{$field.itemname_1}" />
+              </div>
+            </li>
+            <li>
+              <h4>{$field.itemname_3}：</h4>
+              <div class="msg_ipt12">
+                <input class="textborder" size="42" type='text' id='attr_3' name='{$field.attr_3}' placeholder="请输入{$field.itemname_3}" />
+              </div>
+            </li>
+            <li>
+              <h4 class="xh">{$field.itemname_4}：</h4>
+              <div class="msg_ipt1">
+                <input class="textborder" size="16" type='text' id='attr_4' name='{$field.attr_4}' placeholder="请输入{$field.itemname_4}"/>
+              </div>
+            </li>
+            <li>
+              <h4 class="xh">{$field.itemname_5}：</h4>
+              <div class="msg_ipt1">
+                <input class="textborder" size="30" type='text' id='attr_5' name='{$field.attr_5}' placeholder="请输入您的{$field.itemname_5}"/>
+              </div>
+            </li>
+            <li>
+              <h4>{$field.itemname_6}：</h4>
+              <div class="msg_ipt12">
+                <input class="textborder" size="30" type='text' id='attr_6' name='{$field.attr_6}' placeholder="请输入您的{$field.itemname_6}"/>
+              </div>
+            </li>
+            <li>
+              <h4>{$field.itemname_8}：</h4>
+              <div class="msg_ipt12">
+                <select class="msg_option" {$field.first_id_8}>
+                  <option value=''>请选择您所在的省份</option>
+                  {eyou:volist name='$field.options_8' id='vo'}
+                  <option value="{$vo.id}">{$vo.name}</option>
+                  {/eyou:volist}
+                 </select>
+                {$field.hidden_8} </div>
+            </li>
+            <li>
+              <h4>{$field.itemname_7}：</h4>
+              <div class="msg_ipt12">
+                <input class="textborder" size="50" type='text' id='attr_7' name='{$field.attr_7}' placeholder="请输入您的{$field.itemname_7}"/>
+              </div>
+            </li>
+            <li>
+              <h4>{$field.itemname_2}：</h4>
+              <div class="msg_ipt12 msg_ipt0">
+                <textarea class="areatext" style="width:100%;" id='attr_2' name='{$field.attr_2}' rows="8" cols="65" placeholder="请输入您的任何要求、意见或建议"></textarea>
+              </div>
+            </li>
+            <li>
+              <h4></h4>
+              <div class="msg_btn">
+                <input type="submit" value="提 交" name="submit" class="msg_btn1"/>
+                <input type="reset" value="重 填" name="reset" />
+              </div>
+            </li>
+          </ul>
+          {$field.hidden}
+        </form>
+        {/eyou:guestbookform} </div>
+    </div>
+  </div>
+  <div class="clear"></div>
+</div>
+</div>
+{eyou:include file="footer.htm" /}
+</html>
+</body>
